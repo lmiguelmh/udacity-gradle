@@ -21,6 +21,7 @@ Exercises:
 7. CHALLENGE! Log "Catch me if you can" at DEBUG level, then use grep (or
     findstr on Windows) to find that message in the logs.
 
+gradle hello -d | findstr "CATCH ME"
 */
 
 task hello(type: HelloTask)
@@ -28,12 +29,15 @@ task hello(type: HelloTask)
 class HelloTask extends DefaultTask {
     @TaskAction
     void doAction() {
-        println 'Hello World'
+      logger.info("start task action")
+        print('Hello World')
+      logger.info("end task action")
+      logger.debug("CATCH ME IF YOU CAN")
     }
 }
 
 /*
 task derpy << {
-    primp "Herp de derp"
+    println "Herp de derp"
 }
-*/
+//*/

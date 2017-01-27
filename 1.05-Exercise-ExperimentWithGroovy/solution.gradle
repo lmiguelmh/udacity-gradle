@@ -77,4 +77,3 @@ task foobar {
         println "$foo + foo equals ${foo + 'foo'}"
     }
 }
-

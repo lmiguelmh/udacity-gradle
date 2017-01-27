@@ -70,6 +70,18 @@ task copyImageFolders(type: Copy) {
     into 'build'
 }
 
+def cif2 = project.task("copyImageFolders2", type:Copy, {
+from('images', {
+    include '*.jpg'
+    into 'jpeg2'
+})
+from('images', {
+    include '*.gif'
+    into 'gif2'
+})
+into('build')
+})
+
 /*
 
 Gradle provides task types for creating archives like Zip or Tar files.
