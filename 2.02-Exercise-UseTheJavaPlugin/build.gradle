@@ -10,3 +10,18 @@ Exercises:
    file.
 
 */
+project.apply(plugin:"java")
+
+/*
+var t = project.task("makeJar", type:Jar, {
+  manifest {
+    attributes
+  }
+})
+*/
+
+jar  {
+  manifest {
+    attributes "Implementation-Version": "1.0"
+  }
+}

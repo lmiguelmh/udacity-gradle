@@ -19,3 +19,8 @@ Hint: For more information on using Gradle nightly builds, check out the
 Gradle website: http://gradle.org/gradle-nightly-build/
 
 */
+
+// configure a nightly build https://gradle.org/gradle-nightly-build/
+task wrapper, type:Wrapper, {
+  gradleVersion '2.14.1'
+}

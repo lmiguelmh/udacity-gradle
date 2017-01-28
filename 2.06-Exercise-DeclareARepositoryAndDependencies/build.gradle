@@ -27,6 +27,16 @@ http://search.maven.org/
 
 apply plugin: 'java'
 
+project.repositories({
+  mavenCentral()
+  //mavenLocal()
+})
+
+project.dependencies({
+  compile 'commons-io:commons-io:2.5'
+  compile fileTree(dir: 'libs', include: '*.jar')
+})
+
 task printDependencies {
     doLast {
         configurations.compile.each { println it.name }
